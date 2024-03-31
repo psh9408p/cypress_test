@@ -1,6 +1,6 @@
 describe("TODO 테스트코드", () => {
   it("TODO INPUT TEST", () => {
-    // cy.visit("/test");
+    cy.visit("/test");
     // cy.get("[data-cy=todoInput]").as("todoInput");
     // cy.get("@todoInput").type("~~~");
 
