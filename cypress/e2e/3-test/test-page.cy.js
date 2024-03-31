@@ -11,6 +11,7 @@ describe("TODO 테스트코드", () => {
 
     // case2
     cy.get("input").clear();
-    cy.get("button").click(); // 리스트에 항목이 추가되지 않았음을
+    cy.get("button").click();
+    cy.get("ul").children().should("have.length", 0);
   });
 });
