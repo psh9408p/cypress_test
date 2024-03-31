@@ -3,15 +3,16 @@ import { useState } from "react";
 export default function Home() {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState<string[]>([]);
+  const [error, setError] = useState("");
 
   const addTask = () => {
-    if (!task) return;
+    if (!task.trim()) {
+      setError("할 일을 입력해주세요.");
+      return;
+    }
     setTasks((prevTasks) => [...prevTasks, task]);
     setTask("");
-  };
-
-  const deleteTask = (index: any) => {
-    setTasks((prevTasks) => prevTasks.filter((_, i) => i !== index));
+    setError("");
   };
 
   return (
@@ -20,15 +21,23 @@ export default function Home() {
       <input
         type="text"
         value={task}
-        onChange={(e) => setTask(e.target.value)}
+        onChange={(e) => {
+          setTask(e.target.value);
+          setError("");
+        }}
         placeholder="할 일을 입력하세요..."
       />
       <button onClick={addTask}>추가하기</button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <ul>
         {tasks.map((t, index) => (
           <li key={index}>
             {t}
-            <button onClick={() => deleteTask(index)}>삭제</button>
+            <button
+              onClick={() => setTasks(tasks.filter((_, i) => i !== index))}
+            >
+              삭제
+            </button>
           </li>
         ))}
       </ul>
