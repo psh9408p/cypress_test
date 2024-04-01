@@ -10,6 +10,10 @@ export default function Home() {
       setError("할 일을 입력해주세요.");
       return;
     }
+    if (task.trim().length > 10) {
+      setError("할 일은 10자리를 넘길 수 없습니다.");
+      return;
+    }
     setTasks((prevTasks) => [...prevTasks, task]);
     setTask("");
     setError("");
