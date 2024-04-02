@@ -1,0 +1,29 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "userAgent": "synpress",
+  "retries": { "runMode": 0, "openMode": 0 },
+  "integrationFolder": "tests/e2e/specs",
+  "screenshotsFolder": "screenshots",
+  "videosFolder": "videos",
+  "video": true,
+  "chromeWebSecurity": true,
+  "viewportWidth": 1366,
+  "viewportHeight": 850,
+  "component": {
+    "componentFolder": ".",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  },
+  "env": {
+    "coverage": false
+  },
+  "network": {
+    "provider": "https://api.test.wemix.com/"
+  },
+  "accounts": [
+    "5a55bf53bc6132447a9bfc209a897851f7d3a8ca02c93ceecb28bd2f1fc196db"
+  ],
+  "defaultCommandTimeout": 30000,
+  "pageLoadTimeout": 30000,
+  "requestTimeout": 30000,
+  "supportFile": "tests/support/index.js"
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Home() {
+export default function Test() {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState<string[]>([]);
   const [error, setError] = useState("");
